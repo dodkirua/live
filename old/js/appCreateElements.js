@@ -5,8 +5,8 @@ let div2 = document.getElementById("secondDiv");
 let nouveauSpan = document.createElement("span"); // phase 1 ==> je crée l'élément.
 nouveauSpan.id = "jsAjout"; // je lui ajoute une Id.
 nouveauSpan.className= "spanBackground"; // Eventuellement je lui rajoute une classe
-nouveauSpan.classList.add("spanTextColor"); // Ajoute une classe CSS ( utilise si une autre classe a deja été donnée pour ne pas supprimer celle qui existe déja ).
-nouveauSpan.classList.remove("blabla");// Supprime une classe CSS de la liste des classes de l'élément
+nouveauSpan.classList.add("spanTextColor"); // Ajoute une classe css ( utilise si une autre classe a deja été donnée pour ne pas supprimer celle qui existe déja ).
+nouveauSpan.classList.remove("blabla");// Supprime une classe css de la liste des classes de l'élément
 nouveauSpan.innerHTML="quelque chose a mettre";
 
 // Phase 2 ==> je le place le bon parent.
