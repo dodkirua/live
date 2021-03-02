@@ -13,9 +13,13 @@ class User {
         $this->setPassword($password);
     }
 
+    /**
+     * @return string
+     */
     public function __toString() : string {
         return $this->getUsername();
     }
+
     /**
      * @return mixed
      */
