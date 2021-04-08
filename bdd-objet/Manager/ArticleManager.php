@@ -44,8 +44,8 @@ class ArticleManager {
             ");
 
             $stmt->bindValue(':title',$article->getTitle());
-            $stmt->bindValue(':title',$article->getTitle());
-            $stmt->bindValue(':id',  $article->getId());
+            $stmt->bindValue(':content',$article->getContent());
+            $stmt->bindValue(':id',  $article->getId(), PDO::PARAM_INT);
 
             return $stmt->execute();
         }
@@ -59,7 +59,7 @@ class ArticleManager {
             ");
 
             $stmt->bindValue(':title',$article->getTitle());
-            $stmt->bindValue(':title',$article->getTitle());
+            $stmt->bindValue(':content',$article->getContent());
 
 
             return $stmt->execute();

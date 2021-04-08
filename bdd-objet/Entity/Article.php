@@ -25,7 +25,7 @@ class Article {
     /**
      * @return int
      */
-    public function getId(): int    {
+    public function getId(): ?int    {
         return $this->id;
     }
 
@@ -71,10 +71,10 @@ class Article {
     }
 
     /**
-     * @param string $date_add
+     * @param string|null $date_add
      * @return Article
      */
-    public function setDateAdd(string $date_add): Article   {
+    public function setDateAdd(?string $date_add): Article   {
         $this->date_add = $date_add;
         return $this;
     }
