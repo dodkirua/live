@@ -17,10 +17,45 @@ $manager = new StudentManager();
 
 switch($requestType) {
     case 'GET':
+        //obtention d'information
         if(isset($_GET['id']))
             echo getStudent($manager, intval($_GET['id']));
         else
             echo getStudents($manager);
+        break;
+    case 'POST':
+        // PRéparation de la réponse.
+        $response = [
+            'error' => 'success',
+            'message' => 'Utilisateur ajouté avec succès',
+        ];
+
+        $data = json_decode(file_get_contents('php://input'));
+        if(isset($data->firstname, $data->lastname, $data->school)) {
+            $school = intval($data->school);
+            $result = $manager->addStudent($data->firstname, $data->lastname, $school);
+            if(!$result) {
+                $response = [
+                    'error' => 'danger',
+                    'message' => 'Une erreur est survenue en ajoutant cet étudiant',
+                ];
+            }
+        }
+        else {
+            $response = [
+                'error' => 'danger',
+                'message' => 'Le nom, prénom ou école est manquant',
+            ];
+        }
+        echo json_encode($response);
+        break;
+    case 'PUT':
+        //Modification d'un élève
+        break;
+    case 'DELETE':
+        //Suppression d'un élève
+        delStudent($manager, intval($_GET['id']));
+        echo getStudents($manager);
         break;
     default:
         break;
@@ -72,6 +107,9 @@ function getStudent(StudentManager $manager, int $id): string {
     return json_encode($response);
 }
 
+function delStudent(StudentManager $manager, int $id): string {
+    $manager->delStudent($id);
+}
 exit;
 
 /**
