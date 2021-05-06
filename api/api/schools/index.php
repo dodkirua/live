@@ -13,7 +13,7 @@ header('Content-Type: application/json');
 $requestType = $_SERVER['REQUEST_METHOD'];
 $manager = new SchoolManager();
 
-switch($requestType) {
+switch($requestType) {dr
     // Obtention d'informations.
     case 'GET':
         echo getSchools($manager);

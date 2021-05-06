@@ -60,4 +60,4 @@ else {
     $controller->homePage();
 }
 
-// Soit l'url ne contient pas le paramètre controller.
+// Soit l'url ne contient./ pas le paramètre controller.
