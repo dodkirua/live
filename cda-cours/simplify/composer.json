@@ -1,0 +1,16 @@
+{
+    "name": "dodkirua/simplify",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Dodkirua\\Simplify\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dodkirua",
+            "email": "pybouttefeux@gmail.com"
+        }
+    ],
+    "require": {}
+}
